@@ -1,0 +1,109 @@
+﻿@page "/kategori/{slug}"
+@model UI.RazorPages.Pages.CategoryModel
+@{
+}
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1>
+				@Model.CategoryItem.Name
+			</h1>
+			<p>@Model.CategoryItem.Description</p>
+			<p>Haber Sayısı: @Model.Articles.Total</p>
+		</header>
+	</div>
+</section>
+
+<section>
+	<ul class="pagination">
+		@if (Model.Articles.CurrentPages <= 1)
+		{
+			<li><span class="button disabled">Geri</span></li>
+		}
+		else
+		{
+			<li><a class="button" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@(Model.Articles.CurrentPages-1)">Geri</a></li>
+		}
+
+		@for (int i = Model.Articles.Start; i <= Model.Articles.End; i++)
+		{
+			if (Model.Articles.CurrentPages == i)
+			{
+				<li><a href="#" class="page active">@i</a></li>
+			}
+			else
+			{
+				<li><a class="page" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@i">@i</a></li>
+			}
+		}
+		
+		@if (Model.Articles.CurrentPages >= Model.Articles.TotalPages)
+		{
+			<li><span class="button disabled">İleri</span></li>
+		}
+		else
+		{
+			<li><a class="button" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@(Model.Articles.CurrentPages+1)">İleri</a></li>
+		}
+	</ul>
+</section>
+<!-- Section -->
+<section>
+
+	<div class="posts">
+		@foreach (var item in Model.Articles.Items)
+		{
+			<article>
+				<a href="#" class="image"><img src="~/images/pic01.jpg" alt="" /></a>
+				<h3>@item.Title</h3>
+				<ul class="actions" style="flex-wrap: wrap;">
+					@foreach (var c in item.Categories)
+					{
+						<li style="margin-bottom: .5rem;">
+							<a asp-page="category" asp-route-slug="@c.Slug" class="button primary small">@c.Name</a>
+						</li>
+					}
+				</ul>
+				<p>@item.ShortContent</p>
+				<ul class="actions">
+					<li><a href="#" class="button">...Daha Fazla</a></li>
+				</ul>
+			</article>
+		}
+	</div>
+</section>
+<section>
+	<ul class="pagination">
+		@if (Model.Articles.CurrentPages <= 1)
+		{
+			<li><span class="button disabled">Geri</span></li>
+		}
+		else
+		{
+			<li><a class="button" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@(Model.Articles.CurrentPages-1)">Geri</a></li>
+		}
+
+		@for (int i = Model.Articles.Start; i <= Model.Articles.End; i++)
+		{
+			if (Model.Articles.CurrentPages == i)
+			{
+				<li><a href="#" class="page active">@i</a></li>
+			}
+			else
+			{
+				<li><a class="page" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@i">@i</a></li>
+			}
+		}
+
+		@if (Model.Articles.CurrentPages >= Model.Articles.TotalPages)
+		{
+			<li><span class="button disabled">İleri</span></li>
+		}
+		else
+		{
+			<li><a class="button" asp-page="category" asp-route-slug="@Model.CategoryItem.Slug" asp-route-p="@(Model.Articles.CurrentPages+1)">İleri</a></li>
+		}
+	</ul>
+</section>
+
