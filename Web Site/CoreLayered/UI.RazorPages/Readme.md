@@ -17,8 +17,6 @@
 - **HTML5UP Tema**
 - **CSS3 ve JavaScript**
 
-### Lisans
-Bu proje **MIT Lisansı** altında lisanslanmıştır. Ayrıntılar için [LICENSE](LICENSE) dosyasını inceleyebilirsiniz.
 
 ---
 
