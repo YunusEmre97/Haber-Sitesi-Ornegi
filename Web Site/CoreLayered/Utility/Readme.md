@@ -1,3 +1,5 @@
+İşte Utility katmanına ait kodları içeren projeniz için Github açıklamanızı zenginleştirecek bir öneri:
+
 ---
 
 ## Utility Katmanı - Yardımcı Fonksiyonlar ve Genel Yapılar
@@ -87,6 +89,8 @@ public enum MediaType
 - **Esneklik**: Repository ve Pagination gibi generic yapılar, projede farklı veri tipleriyle kolayca çalışılmasına olanak tanır.
 - **Okunabilirlik**: Her fonksiyon ve sınıf, belirli bir sorunu çözmek için tasarlanmıştır, bu da kodun anlaşılabilirliğini artırır.
 
+Bu katman, projenizin daha modüler, bakımı kolay ve ölçeklenebilir olmasını sağlar. Yardımcı işlevlerinizi merkezi bir yapıya taşıyarak, her şeyin düzenli ve kolay yönetilebilir olmasını garantileyebilirsiniz.
 
 ---
 
+Eğer bu açıklama ile ilgili herhangi bir değişiklik yapmak isterseniz, size yardımcı olmaktan memnuniyet duyarım!
